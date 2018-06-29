@@ -1,0 +1,85 @@
+      
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+code {
+  font-size: 13px;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 50vmin 1fr;
+  grid-template-rows: 1fr 50vmin 1fr 1fr;
+  grid-template-areas:
+    "one head  two"
+    "one clock two"
+    "one goal  two"
+    "one foot  two"
+  ;
+  background-repeat: none;
+  background-size: cover;
+  background-position: 50% 0%;
+  background-attachment: fixed;
+
+}
+
+#clock{
+  width: 100%;
+  height: 100%;
+  grid-area: clock;
+  margin: auto auto;
+  border-radius: 30000px;
+  border: 0px solid white;
+  background-clip: border-box;
+  background: rgba(255,255,255,0.3);
+  overflow: hidden;
+}
+
+#goal {
+  grid-area: goal;
+  background-clip: padding-box;
+  background: rgba(255,255,255,0.3);
+  margin: 20px;
+}
+#goal, #goal input {
+  font-size: 25px;
+  font-weight: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#goal input {
+  border: none;
+  border-bottom: 2px solid white;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: none;
+}
+
+/*
+body > div {
+  display: grid;
+}
+*/
+div.code {
+  grid-column: 1;
+}
+div.output {
+  grid-column: 2;
+}
+div.output > div {
+  overflow: auto;
+}
+
+textarea {
+  min-height: 300px;
+}
+
+iframe {
+  min-height: 500px;
+  width: 100%;
+}
