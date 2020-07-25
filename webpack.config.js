@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -11,6 +11,13 @@ module.exports = {
   },
   devServer: {
     contentBase: './run',
+    before: (app, server, compiler) => {
+      app.get('/images/:file', (req, res) => {
+        const { file } = req.params;
+        console.log('request: ', req.method, req.url, file);
+        res.sendFile(path.resolve('./', '.'+req.url));
+      });
+    },
     //hot: true,
     compress: true,
     port: 9000
