@@ -14,7 +14,7 @@
   "author": "Harald Niesche",
   "license": "GPL",
   "dependencies": {
-    "codemirror": "^5.56.0"
+    "codemirror": "^5.58.2"
   },
   "devDependencies": {
     "@types/codemirror": "0.0.97",
